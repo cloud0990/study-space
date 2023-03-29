@@ -15,4 +15,6 @@ npm i @babel/preset-env -D
 npm i express
 
 npm i pug
+
+npm i ws
 ~~~

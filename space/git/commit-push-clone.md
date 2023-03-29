@@ -47,3 +47,10 @@ $ git branch -m <기존 branch> <신규 branch>
 //체크아웃
 $ git checkout <branch>
 ~~~
+
+<br>
+
+``` Java
+//클론
+git clone https://github.com/cloud0990/Just-ABCD.git
+```
