@@ -3,7 +3,7 @@
 $ git init .
 
 //원경 저장소 <-> 로컬 저장소 연결
-$ git remote add origin https://github.com/계정명/저장소명
+$ git remote add origin < 원격 저장소 URL >
 
 //상태 확인
 $ git status
