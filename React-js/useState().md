@@ -3,7 +3,7 @@
 
 const [현재 값, 현재값을 바꿀 함수] = useState(현재 state 기본값 설정 가능);
 
-~~~
+~~~ javascript
 import { useState } from "react";
 
 function Test() {
@@ -30,8 +30,8 @@ export default Test;
 
 <br>
 
-**etc...**
-~~~
+**etc**
+~~~ html
 // HTML
 <label for=""></label>
 <input class="" />

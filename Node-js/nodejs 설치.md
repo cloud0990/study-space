@@ -3,14 +3,14 @@
 
 **Node.js 버전 확인 1**
 ~~~
-node --version
+$ node --version
 ~~~
 
 <br>
 
 **Node.js 버전 확인 2** _(*npm: Node Package Manager)_
 ~~~
-npm --version
+$ npm --version
 ~~~
 <br>
 <hr>

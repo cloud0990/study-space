@@ -6,6 +6,7 @@ SpringBoot 2.7.7에서 3.0.1로 올린 후, Mapper 인식 실패 오류 발생
 ~~~
 Consider defining a bean named 'MapperName' in your configuration
 ~~~
+
 <br><br>
 Before
 <br>
@@ -19,7 +20,7 @@ After
 
 변경 후, 기 pom.xml dependency 를 아래와 같이 업데이트
 
-~~~
+~~~ xml
 <!-- mysql -->
 <dependency>
     <groupId>mysql</groupId>
