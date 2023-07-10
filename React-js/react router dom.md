@@ -1,9 +1,9 @@
 ~~~
-//최신 버전
+# 최신 버전
 npm install react-router-dom
 
-//버전 지정
-npm install react-router-dom@버전지정
+# 버전 지정
+npm install react-router-dom@버전
 ~~~
 
 <br>
