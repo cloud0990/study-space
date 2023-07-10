@@ -1,4 +1,4 @@
-메이븐 설치
+- 메이븐 설치
 ~~~
 sudo apt install maven
 
@@ -7,13 +7,11 @@ mvn -version
 ~~~
 
 <br>
-<br>
-처음 서버 연결하고 기본으로 open jdk 11 설치되어있어서
-<br>
-삭제하고 17 다시 설치함
+
+- openjdk 설치
 
 ~~~
-# open jdk 11 삭제
+# open jdk 삭제
 sudo apt-get remove openjdk*
 sudo apt-get autoremove --purge
 sudo apt-get autoclean
