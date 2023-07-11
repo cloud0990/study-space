@@ -13,9 +13,9 @@ darwin.iso( Mac OS VMware Tool ) 를 직접 주입해야함
 Guest OS 종료 후,
 새로운 CD/DVD 추가해서 다운 받은 파일 지정
 
-![img](../img/vmware/CDDVD추가.png)
+![img](../img/vmware/CDDVD_추가.png)
 
 <br>
 
 재시동 했을 때 바탕화면에 우측 상단에 떠있는 VMware Tools 클릭해서 설치하면 됨
-![img](../img/vmware/VMware Tools.png)
+![img](../img/vmware/VMware_Tools.png)
