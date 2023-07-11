@@ -1,10 +1,8 @@
-**Array.map()**
+Array.map(): 주로 배열 요소에 변경 사항 적용, return 값으로 새로운 Array 반환
+
 <br>
-주로 배열 요소에 변경 사항 적용\
-return 값으로 새로운 Array 반환
 
 ~~~ JavaScript
-
 let arr = ["hello", "hi"];
 
 // 첫번째 argument: Array item

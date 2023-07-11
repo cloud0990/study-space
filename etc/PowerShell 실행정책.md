@@ -1,12 +1,12 @@
 현재 정책 확인
-```
+``` bash
 Get-ExecutionPolicy
 ```
 
 <br>
 
 정책 변경
-```
+``` bash
 Set-ExecutionPolicy
 ```
 

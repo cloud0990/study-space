@@ -10,8 +10,8 @@ root.render(<App />);
 
 <br>
 
-- 모든 Component 의 이름은 대문자로 시작
-- 소문자면 JSX 가 html tag와 혼동
+1. 모든 Component 의 이름은 대문자로 시작
+2. 소문자면 JSX 가 html tag와 혼동
     - ex) const button = < button> 으로 인식
 
 ~~~ javascript
@@ -32,8 +32,6 @@ export default App;
 <br>
 
 **etc: 절대경로 설정**
-
-<br>
 
 package.json과 같은 경로에 jsconfig.json 추가
 ``` json
