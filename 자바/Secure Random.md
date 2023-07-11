@@ -1,4 +1,4 @@
-**java.util.Random: 비보안 관련 작업에 대한 난수 생성에 유용**
+java.util.Random: 비보안 관련 작업에 대한 난수 생성에 유용
 
 ```
 - 의사난수가 생성됨
@@ -11,7 +11,7 @@
 
 <br>
 
-**java.security.SecureRandom: 안전한 난수 필요 시 유용**
+java.security.SecureRandom: 안전한 난수 필요 시 유용
 ```
 - 암호화된 보안 난수 생성
 - 생성된 숫자는 실제로 무작위이며, 예측/재현 불가
@@ -32,7 +32,6 @@ public void testRandom() {
 
 //준수 코드
 private SecureRandom random = SecureRandom.getInstanceStrong();
-int ra
 
 public void testRandom() {
     int num = this.random.nextInt();    
