@@ -22,3 +22,8 @@ $ sudo apt-get install openjdk-17-jdk
 # 버전 확인
 $ java -version
 ~~~
+
+```bash
+# 버전 변경
+$ sudo update-alternatives --config java
+```
