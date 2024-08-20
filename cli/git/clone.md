@@ -1,18 +1,15 @@
-``` bash
+``` shell
 # remote repo URL 을 현재 위치에 복제
-$ git clone <복제할 원격 저장소 URL> <생성 프로젝트명 (생략 시, 원격 저장소명으로 생성)>
+$ git clone {복제할 원격 저장소 URL} {프로젝트명 (생략 시, 원격 저장소명)}
 ```
-``` bash
+``` shell
 # 원격 저장소 목록 확인
 $ git remote -v
 
 # 로컬 PC에 클론한 Fork 저장소를 원격 연결
 $ git remote add <원격 저장소 별칭> <원격 져장소 URL>
 ```
-
-<br>
-
-``` bash
+``` shell
 # 클론 후 첫 commit 시
 # Author identity unknown
 # *** Please tell me who you are.
