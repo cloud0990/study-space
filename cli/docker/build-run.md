@@ -11,5 +11,5 @@ $ docker run -d --name {컨테이너명} -p {host port:container port} {실행�
 ```
 ```shell
 #기존에 있는 컨테이너 실행
-$ docker start {container명 or ID}
+$ docker start {container명 or ID 
 ```
