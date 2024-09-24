@@ -46,4 +46,19 @@ $ nohup startNodeManager > {nodemanager log file 경로} &
 
 # web 접속
 >> [서버 IP]:9736/webadmin
+
+#MS 시작
+$ startManagedServer -dasurl {DAS IP:DAS PORT} -domain {domain name} -server {server name} -u {username} -p {password}
+```
+---
+`Linux jeus 종료 명령어`
+```shell
+#node manager
+$ stopNodeManager -host {서버 IP} -port {node manager port}
+
+#jues DAS
+$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} local-shutdown
+
+# MS
+$ stopServer -host {MS IP:MS BASSPORT} -u {username} -p {password}
 ```
