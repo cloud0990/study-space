@@ -1,23 +1,15 @@
 firewalld 상태 확인
-
 ~~~bash
 $ firewall-cmd --status
-
 # result: running or not running
 ~~~
- 
-<br>
-
+---
 사용가능한 서비스/포트 출력
-
 ~~~ bash
 $ firewall-cmd --list-all
 ~~~
-
-<br>
-
+---
 TCP 포트 추가 및 제거
-
 ~~~ bash
 # 포트 추가
 $ firewall-cmd --add-port=포트/tcp
@@ -28,20 +20,14 @@ $ firewall-cmd --permanent --add-port=포트/tcp
 # 포트 삭제
 $ firewall-cmd --remove-port=포트/tcp
 ~~~
-
-<br>
-
+---
 서버 재시작 후에도 실행되도록 설정
 
 ~~~bash
 $ systemctl enable firewalld
 $ systemctl start firewalld
 ~~~
-
-<br>
-
----
-
+  ---
 **용어 정리**
 
 ~~~
