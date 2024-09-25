@@ -18,7 +18,6 @@ $ startManagedServer -domain {domain name} -server {server name} -u {user name} 
 
 # Node Manager start/stop -> JEUS_HOME 경로로 이동 후
 $ startNodeManager -domain {domain name} -u {username} -p {password}
-$ stopNodeManager -host {host name} -port {port} #$JEUS_HOME/bin/nodemanager/jeusnm.xml 에서 확인
 ```
 ---
 `Linux`
@@ -57,7 +56,8 @@ $ startManagedServer -dasurl {DAS IP:DAS PORT} -domain {domain name} -server {se
 $ stopNodeManager -host {서버 IP} -port {node manager port}
 
 #jues DAS
-$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} local-shutdown
+$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} "local-shutdown -to 120"
+$ ps aux | grep jeus
 
 # MS
 $ stopServer -host {MS IP:MS BASSPORT} -u {username} -p {password}
