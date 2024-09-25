@@ -56,7 +56,8 @@ $ startManagedServer -dasurl {DAS IP:DAS PORT} -domain {domain name} -server {se
 $ stopNodeManager -host {서버 IP} -port {node manager port}
 
 #jues DAS
-$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} "local-shutdown -to 120"
+$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} "local-shutdown" # 즉시 종료
+$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} "local-shutdown -to 120" # -to {ms}: 종료 요청을 받고 {ms} 이내에 종료
 $ ps aux | grep jeus
 
 # MS

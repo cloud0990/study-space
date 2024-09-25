@@ -9,8 +9,9 @@ $ git remote -v
 # 로컬 PC에 클론한 Fork 저장소를 원격 연결
 $ git remote add <원격 저장소 별칭> <원격 져장소 URL>
 ```
+---
+`클론 후 첫 commit 시 오류 발생 시`
 ``` shell
-# 클론 후 첫 commit 시
 # Author identity unknown
 # *** Please tell me who you are.
 # Run

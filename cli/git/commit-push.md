@@ -13,16 +13,15 @@ $ git add -A
     # or
 $ git add .
 ```
-<br>
-
+---
 ``` bash
-# 커밋
+# commit
 $ git commit -m "커밋 메세지"
 
-# 푸쉬
+# push
 $ git push <remote> <branch>
 # ex: git push origin master
 
-# 풀
+# pull
 $ git pull <remote> <branch>
 ```

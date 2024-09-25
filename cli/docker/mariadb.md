@@ -12,10 +12,8 @@ $ docker exec -it {contianer name} {images name} -u root -p
     -e MARIADB_DATABASE={database naem}
     -e MARIADB_USER={usern ame}
 ```   
-   
-<br>
-
-mariadb container ip 확인
+---
+`mariadb container ip 확인`
 ```shell
 $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <mariadb_container_name>
 ```

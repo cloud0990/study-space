@@ -1,29 +1,17 @@
-- 메이븐 설치
+`메이븐 설치`
 ~~~bash
 $ sudo apt install maven
-
-# 버전 확인
 $ mvn -version
 ~~~
-
-<br>
-
-- openjdk 설치
-
+---
+`openjdk 설치`
 ~~~bash
 # open jdk 삭제
 $ sudo apt-get remove openjdk*
 $ sudo apt-get autoremove --purge
 $ sudo apt-get autoclean
 
-# open jdk 17 설치
-$ sudo apt-get install openjdk-17-jdk
-
-# 버전 확인
+# open jdk 설치
+$ sudo apt-get install openjdk-{version}-jdk
 $ java -version
 ~~~
-
-```bash
-# 버전 변경
-$ sudo update-alternatives --config java
-```

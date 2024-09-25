@@ -1,34 +1,26 @@
-- node.js 설치 후 버전 확인 ( cmd 창이 켜져있었다면 exit 후 재접속 )
+`node.js 설치 후 버전 확인 ( cmd 창이 켜져있었다면 exit 후 재접속 )`
 
 **Node.js 버전 확인 1**
 ~~~bash
 $ node --version
 ~~~
+---
 
-<br>
-
-**Node.js 버전 확인 2** _(*npm: Node Package Manager)_
+`Node.js 버전 확인 2** _(*npm: Node Package Manager)`
 ~~~bash
 $ npm --version
 ~~~
-<br>
-<hr>
-<br>
-
-- cmd 실행 확인
+---
+`cmd 실행 확인`
   - js 파일 생성 후 console.log('message')
   - **js파일 경로에서 cmd 실행** 하면 로그 찍힘
 
 ~~~bash
 node fileName.js
 ~~~
-
-<br>
-
-- client 실행 확인
+---
+`client 실행 확인`
   - js 파일 생성 후 아래 코드 작성 **http://localhost:port/fileName**
-
-<br>
 
 ~~~ java
 // require cf) java import
