@@ -9,15 +9,15 @@
 ```shell
 # JEUS Admin 실행
 # http://localhost:9736/webadmin
-$ startDomainAdminServer -u {admin username} -p {admin pwd}
+$ startDomainAdminServer -u {user id} -p {password}
 # JEUS 콘솔 접속
-$ jeusadmin -host {hostname:port} -domain {domain name} -u {username} -p {password}
+$ jeusadmin -host {hostname:port} -domain {domain name} -u {user id} -p {password}
 
 # JEUS 서버 기동
-$ startManagedServer -domain {domain name} -server {server name} -u {user name} -p {password}
+$ startManagedServer -domain {domain name} -server {server name} -u {user id} -p {password}
 
 # Node Manager start/stop -> JEUS_HOME 경로로 이동 후
-$ startNodeManager -domain {domain name} -u {username} -p {password}
+$ startNodeManager -domain {domain name} -u {user id} -p {password}
 ```
 ---
 `Linux`
@@ -38,7 +38,7 @@ $ vi /home/{user}/jeus8_5/bin/jeus.properties
 
 #adminServer 실행
 $ ./startDomainAdminServer #관리자 계정 입력한 경우
-$ ./startDomainAdminServer -domain {domain name} -u {username} -p {password} #관리자 계정 입력 안 한 경우
+$ ./startDomainAdminServer -domain {domain name} -u {user id} -p {password} #관리자 계정 입력 안 한 경우
 
 #node manager 실행: 백그라운드 실행이 안 되기 때문에 nohup 실행
 $ nohup startNodeManager > {nodemanager log file 경로} &
@@ -47,7 +47,8 @@ $ nohup startNodeManager > {nodemanager log file 경로} &
 >> [서버 IP]:9736/webadmin
 
 #MS 시작
-$ startManagedServer -dasurl {DAS IP:DAS PORT} -domain {domain name} -server {server name} -u {username} -p {password}
+# $ startManagedServer -dasurl {DAS IP:MS PORT} -domain {domain name} -server {server name} -u {user id} -p {password}
+$ jeusadmin -host {DAS IP:DAS PORT} -domain {domain name} -u {user id} -p {password} "start-server <server name>"
 ```
 ---
 `Linux jeus 종료 명령어`
@@ -56,10 +57,22 @@ $ startManagedServer -dasurl {DAS IP:DAS PORT} -domain {domain name} -server {se
 $ stopNodeManager -host {서버 IP} -port {node manager port}
 
 #jues DAS
-$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} "local-shutdown" # 즉시 종료
-$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {username} -p {password} "local-shutdown -to 120" # -to {ms}: 종료 요청을 받고 {ms} 이내에 종료
+$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {user id} -p {password} "local-shutdown"
+$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {user id} -p {password} "local-shutdown -to {timeout}"
+
+# process 확인
 $ ps aux | grep jeus
+$ pgrep -f jeus
+$ ps -ef | grep jeus
 
 # MS
-$ stopServer -host {MS IP:MS BASSPORT} -u {username} -p {password}
+$ stopServer -host {MS IP:MS BASSPORT} -u {user id} -p {password}
+$ jeusadmin -host {DAS IP: DAS PORT} -domain {domain name} -u {user id} -p {password} "stop-server <server name>"
 ```
+---
+
+jeusadmin MS 종료 명령어  
+`local-shutdown: 해당 MS에 직접 접속한 경우 (cf. stopServer)`  
+`stop-server <server list>: 지정 종료`  
+`start-server <server list>: 지정 시작`  
+`suspend-server <server list>: 일시 정지`
