@@ -2,25 +2,8 @@
 |-------------------|-------|--------------------------------------------------------------------|
 | adminServer (DAS) | 9736  | JEUS 도메인 관리 및 web admin을 띄워주는 프로세스                                |
 | nodeManager       | 7730  | 각 노드 별로 컨테이너를 기동 및 관리해주는 프로세스                                     |
-| managedServer(MS) | 8088  | webapp이 배포되어 실제 서비스가 이루어지는 프로세스/nodeManager가 기동되어 있지 않다면 MS 기동 불가능 |
 ---
-
-`window`
-```shell
-# JEUS Admin 실행
-# http://localhost:9736/webadmin
-$ startDomainAdminServer -u {user id} -p {password}
-# JEUS 콘솔 접속
-$ jeusadmin -host {hostname:port} -domain {domain name} -u {user id} -p {password}
-
-# JEUS 서버 기동
-$ startManagedServer -domain {domain name} -server {server name} -u {user id} -p {password}
-
-# Node Manager start/stop -> JEUS_HOME 경로로 이동 후
-$ startNodeManager -domain {domain name} -u {user id} -p {password}
-```
----
-`Linux`
+`Linux JEUS Start`
 ```shell
 # /etc/hosts 파일에서 hostname ip 주소를 localhost 가 아닌, NIC ip로 지정
 
@@ -46,19 +29,18 @@ $ nohup startNodeManager > {nodemanager log file 경로} &
 # web 접속
 >> [서버 IP]:9736/webadmin
 
-#MS 시작
+# MS 시작
 # $ startManagedServer -dasurl {DAS IP:MS PORT} -domain {domain name} -server {server name} -u {user id} -p {password}
 $ jeusadmin -host {DAS IP:DAS PORT} -domain {domain name} -u {user id} -p {password} "start-server <server name>"
 ```
 ---
-`Linux jeus 종료 명령어`
+`Linux JEUS Stop`
 ```shell
 #node manager
 $ stopNodeManager -host {서버 IP} -port {node manager port}
 
 #jues DAS
 $ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {user id} -p {password} "local-shutdown"
-$ jeusadmin -host {서버 IP:서버 PORT} -domain {domain name} -u {user id} -p {password} "local-shutdown -to {timeout}"
 
 # process 확인
 $ ps aux | grep jeus
@@ -66,13 +48,27 @@ $ pgrep -f jeus
 $ ps -ef | grep jeus
 
 # MS
-$ stopServer -host {MS IP:MS BASSPORT} -u {user id} -p {password}
-$ jeusadmin -host {DAS IP: DAS PORT} -domain {domain name} -u {user id} -p {password} "stop-server <server name>"
+# $ stopServer -host {MS IP:MS BASSPORT} -u {user id} -p {password}
+$ jeusadmin -host {HOST IP: DAS PORT} -domain {domain name} -u {user id} -p {password} "stop-server <server name>"
+
+# MS 명령어
+# local-shutdown: 해당 MS에 직접 접속한 경우 (cf. stopServer) -> to {timeout} 설정 시 Graceful 종료
+# stop-server <server list>: 지정 종료
+# start-server <server list>: 지정 시작
+# suspend-server <server list>: 일시 정지
 ```
 ---
+`window`
+```shell
+# JEUS Admin 실행 (http://localhost:9736/webadmin)
+$ startDomainAdminServer -u {user id} -p {password}
 
-jeusadmin MS 종료 명령어  
-`local-shutdown: 해당 MS에 직접 접속한 경우 (cf. stopServer)`  
-`stop-server <server list>: 지정 종료`  
-`start-server <server list>: 지정 시작`  
-`suspend-server <server list>: 일시 정지`
+# JEUS 콘솔 접속
+$ jeusadmin -host {host ip:port} -domain {domain name} -u {user id} -p {password}
+
+# JEUS 서버 기동
+$ startManagedServer -domain {domain name} -server {server name} -u {user id} -p {password}
+
+# Node Manager start/stop -> JEUS_HOME 경로로 이동 후
+$ startNodeManager -domain {domain name} -u {user id} -p {password}
+```
